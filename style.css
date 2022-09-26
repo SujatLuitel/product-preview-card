@@ -179,7 +179,7 @@ button svg{
   margin-right: 0.8em;
 }
 
-@media all and (max-width:376px) {
+@media all and (max-width:660px) {
   .container{
     display: grid;
   }
