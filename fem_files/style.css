@@ -1,0 +1,202 @@
+:root{
+    --clr-primary-100: hsl(158, 36%, 37%);
+    --clr-primary-150: hsl(158, 35%, 22%);
+    --clr-primary-200: hsl(30, 38%, 92%);
+
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-200: hsl(228, 12%, 48%);
+    --clr-neutral-300: hsl(212, 21%, 14%);
+
+    --ff-primary: 'Fraunces', sans-serif;
+    --ff-body: 'Montserrat', sans-serif;
+   
+    --fw-regular: 500;
+    --fw-bold: 700;
+
+    --fs-heading: 32px;
+    --fs-body: 16px;
+
+
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+*{
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html{
+    height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body{
+  background: var(--clr-primary-200);
+
+}
+
+.container{
+  margin: 5em;
+  display: flex;
+  justify-content: center;
+}
+.image{
+    width: 25%;
+  }
+.desktop-image{
+  border-radius: .5em 0em 0em .5em;
+}
+.mobile-image{
+  display: none;
+}
+
+.info{
+  background: var(--clr-neutral-100);
+  width: 25%;
+  padding: 2em;
+  border-radius: 0em 0.5em 0.5em 0em;
+
+}
+
+header h1{
+  font-family: var(--ff-body);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-body);
+  color: var(--clr-neutral-200);
+  margin-block: .5em;
+}
+header h2{
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-heading);
+  color: var(--clr-neutral-300);
+  line-height: 1em;
+  margin-block: .5em;
+  margin-right: 2em;
+}
+
+.paragraph{
+  margin-block: 2em;
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  color: var(--clr-neutral-200);
+  line-height: 1.5 em;
+}
+
+.price{
+  display: flex;
+  align-items: center;
+  margin-block: 1em;
+}
+
+.discount-price{
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-bold );
+  font-size: var(--fs-heading );
+  color: var(--clr-primary-100);
+  margin-right: 1em;
+}
+
+.original-price{
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  color: var(--clr-neutral-200);
+  text-decoration: line-through;
+}
+
+button{
+  display: block ;
+  height: 3.2em;
+  width: 100%;
+  font-family: var(--ff-body);
+  font-weight: var(--fw-regular);
+  color: var(--clr-neutral-100);
+  background: var(--clr-primary-100);
+  border-radius: .6em;
+  border: none;
+  margin-top: 2.5em;
+}
+button:hover{
+  background: var(--clr-primary-150);
+  cursor: pointer;
+}
+
+button svg{
+  margin-right: 0.8em;
+}
+
+@media all and (max-width:376px) {
+  .container{
+    display: grid;
+  }
+
+  .image{
+    width: 100%;
+  }
+  .desktop-image{
+    display:none;
+  }
+  .mobile-image{
+    border-radius: .5em 0.5em 0em 0em;
+    display: block;
+  }
+
+  .info{
+    width: 100%;
+    border-radius: 0em 0em 0.5em .5em;
+  }
+}
